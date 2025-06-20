@@ -19,10 +19,22 @@ function Use() {
 
     const [color, setColorr] = useState('')
 
-const [aceito, setAceito] = useState(false)
+    const [aceito, setAceito] = useState(false)
+
+const [cont, setCont] = useState(0)
+
+const [show, setShow] = useState(false)
+
+const [modo, setModo] = useState(false)
 
     return (
         <section>
+
+<h1>Mudar de tema</h1>
+
+<p>{modo ? 'modo claro': 'modo escuro' }</p>
+
+<button onClick={() => setModo(!modo)} style={{backgroundColor: modo? '#fff': '#000'}} >Mudar tema</button>
 
             <h1>Aqui vamos estudar o useStates</h1>
 
@@ -72,21 +84,24 @@ const [aceito, setAceito] = useState(false)
 
             <h1>Termos de uso</h1>
 
-           <label>
-<input type="checkbox" checked={aceito} onChange={() => {setAceito(!aceito)}} />
+            <label>
+                <input type="checkbox" checked={aceito} onChange={() => { setAceito(!aceito) }} />
 
-           </label>
-{aceito && <p>E permitido</p>}
+            </label>
+            {aceito && <p>E permitido</p>}
 
+<h1>Contador Simples</h1>
 
+<p> esse é o valor:{cont}</p>
 
-
-
-
-
-
+<button onClick={() => {setCont(cont + 1)}} >+</button>
 
 
+<h1>Mostrar</h1>
+
+<button  onClick={() => setShow(!show)} >Mostrar</button>
+
+{show && <img style={{width:300, height:'auto'}} src="src/IMAGE/Flores.jpg"/>}
 
 
 
